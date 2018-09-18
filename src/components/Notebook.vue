@@ -16,7 +16,16 @@
 
 <script>
     export default {
-        name: "notebook"
+        name: "notebook",
+      props: ['notes', 'activeNote' ],
+      methods: {
+          changeNote (index) {
+            this.$emit('change-note', index)
+          },
+        newNote() {
+            this.$emit('new-note')
+        }
+      }
     }
 </script>
 
