@@ -34,7 +34,7 @@
   .note {
     width: 100%;
     padding: 2rem;
-    box-shadow: 3rem 0 5rem 3rem #f3d17a;
+    box-shadow: 3rem 0 5rem 3rem #1e90ff;
   }
 
   .content, .title {

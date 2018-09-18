@@ -68,7 +68,7 @@
 
   .new-note {
     background-color: #4169e1;
-    color: #808080;
+    color: #000000;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -77,5 +77,6 @@
 
   .new-note:hover {
     background-color: #000080;
+    color: #ffffff;
   }
 </style>
