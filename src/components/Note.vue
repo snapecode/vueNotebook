@@ -14,3 +14,18 @@
         </div>
       </div>
 </template>
+
+<script>
+  export default {
+    name: 'Note',
+    props: ['note'],
+    methods: {
+      deleteNote() {
+        this.$emit('delete-note')
+      },
+      saveNote() {
+        this.$emit('save-note')
+      }
+    }
+  }
+</script>
