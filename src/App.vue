@@ -10,7 +10,7 @@ import Notebook from './components/Notebook'
 import Note from './components/Note'
 import Firebase from 'firebase'
 
-let database = Firebase.initializeApp({
+var database = Firebase.initializeApp({
   apiKey: 'AIzaSyB8VrM8Y5Fj89sqXwXh4B0sjUoeBnVZSWQ',
   authDomain: 'notebook-c3090.firebaseapp.com',
   databaseURL: 'https://notebook-c3090.firebaseio.com',
@@ -29,22 +29,49 @@ export default {
     notes: [],
     index: 0
   }),
+  mounted() {
+    database.once('value', (notes) =>{
+      notes.forEach((note) => {
+        this.notes.push({
+          ref: note.ref,
+          title: note.child('title').val(),
+          content: note.child('content').val()
+        })
+      })
+    })
+  },
   methods: {
     newNote() {
       this.notes.push({
         title: '',
         content: ''
-      })
+      });
       this.index = this.notes.length -1
     },
     changeNote (index) {
       this.index = index
     },
     saveNote() {
-
+      var note = this.notes[this.index];
+      if (note.ref){
+        this.updateExistingNote(note)
+      } else {
+        this.insertNewNote(note)
+      }
+    },
+    updateExistingNote(note){
+      note.ref.set({
+        title: note.tittle,
+        content: note.content
+      })
+    },
+    insertNewNote(note){
+      note.ref = database.push(note)
     },
     deleteNote() {
-      this.notes.splice(this.index, 1)
+      var ref = this.notes[this.index].ref;
+      ref && ref.remove();
+      this.notes.splice(this.index, 1);
       this.index = Math.max(this.index - 1, 0)
     }
   }
