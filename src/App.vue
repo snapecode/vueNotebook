@@ -12,7 +12,31 @@ import Note from './components/Note'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Notebook,
+    Note
+  },
+  data: () => ({
+    notes: [],
+    index: 0
+  }),
+  methods: {
+    newNote() {
+      this.notes.push({
+        title: '',
+        content: ''
+      })
+      this.index = this.notes.length -1
+    },
+    changeNote (index) {
+      this.index = index
+    },
+    saveNote() {
+
+    },
+    deleteNote() {
+      this.notes.splice(this.index, 1)
+      this.index = MAth.max(this.index - 1, 0)
+    }
   }
 }
 </script>
