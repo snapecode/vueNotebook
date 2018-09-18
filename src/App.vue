@@ -8,6 +8,16 @@
 <script>
 import Notebook from './components/Notebook'
 import Note from './components/Note'
+import Firebase from 'firebase'
+
+let database = Firebase.initializeApp({
+  apiKey: 'AIzaSyB8VrM8Y5Fj89sqXwXh4B0sjUoeBnVZSWQ',
+  authDomain: 'notebook-c3090.firebaseapp.com',
+  databaseURL: 'https://notebook-c3090.firebaseio.com',
+  projectId: 'notebook-c3090',
+  storageBucket: '',
+  messagingSenderId: '28701007939'
+}).database().ref();
 
 export default {
   name: 'App',
