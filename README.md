@@ -1,12 +1,11 @@
 # NotePad
 
 > A Vue.js project for a notepad that acts similar to Apple Notes.
+> 
 > Note that this version is using Firebase to record the addition, update, and deletion of notes.
-> Please SEE THE **** for installing firebase. You will have to setup your own firebase database and replace this:
+>
+ >You will have to setup your own firebase database and replace my api keys with your own:
 
-
-  
-  With your Firebase APi info.
 
 
 ## Build Setup
