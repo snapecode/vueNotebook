@@ -35,6 +35,7 @@
     width: 100%;
     padding: 2rem;
     box-shadow: 3rem 0 5rem 3rem #1e90ff;
+    background-color: #f3d17a;
   }
 
   .content, .title {
@@ -66,6 +67,7 @@
   label {
     margin-bottom: 0.5rem;
     display: inline-block;
+    color: #000000;
   }
 
   button {
@@ -74,7 +76,7 @@
     background-color: #44ab22;
     margin-right: 1rem;
     border-radius: 0.25rem;
-    color: #808080;
+    color: #000000;
     font-size: 1rem;
     cursor: pointer;
   }
