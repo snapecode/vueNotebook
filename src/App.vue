@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Notebook @change-note="changeNote" @new-note="newNote" :notes="notes" :activeNote="index" />
+    <Note @save-note="saveNote" @delete-note="deleteNote" :note="notes[index]" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Notebook from './components/Notebook'
+import Note from './components/Note'
 
 export default {
   name: 'App',
